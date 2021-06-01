@@ -40,7 +40,7 @@ double Produs::addUp(string fname,string data)
 					cantitate = alim.getValue(line, 'd');
 				if (i == 3)
 				{
-					portie = alim.getValue(line, 'i');
+					portie = int(alim.getValue(line, 'i'));
 					sum = sum + calcCalorii(prodname);
 				}
 				line.clear();
@@ -60,7 +60,7 @@ double Produs::addUp(string fname,string data)
 					cantitate = alim.getValue(line, 'd');
 				if (i == 2)
 				{
-					portie = alim.getValue(line, 'i');
+					portie = int(alim.getValue(line, 'i'));
 					sum = sum + calcCalorii(prodname);
 				}
 				line.clear();
@@ -288,7 +288,7 @@ void Produs::printDate(double dob)
 		getline(f, line);
 		if (!line.empty())
 		cout << "Pentru data: " << line << endl
-			<< "Calorii consumate: " << calculProgres(line) << endl
+			<< "Calorii consumate: " <<int(calculProgres(line)) << endl
 			<< "Goal: " << dob << endl << endl;
 		line.clear();
 	}

@@ -3,3 +3,8 @@ Para
 Cantitate :200;
 Portie:2;
 
+21.10.2001
+Capsuna
+Cantitate :500;
+Portie:10;
+
