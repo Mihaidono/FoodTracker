@@ -1,0 +1,156 @@
+
+{
+Mar
+Valoare energetica :1;
+Grasimi :1;
+Acizi Grasi :1;
+Glucide :1;
+    -din care zaharur :1;
+Fibre :1;
+Proteine :1;
+Sare :1;
+Cantitate: 100;
+}
+
+{
+Para
+Valoare energetica :1;
+Grasimi :2;
+Acizi Grasi :1;
+Glucide :1;
+    -din care zaharur :1;
+Fibre :1;
+Proteine :1;
+Sare :1;
+Cantitate: 1;
+}
+
+{
+Penis
+Valoare energetica :1;
+Grasimi :1;
+Acizi Grasi :1;
+Glucide :1;
+    -din care zaharur :1;
+Fibre :1;
+Proteine :1;
+Sare :1;
+Cantitate: 1;
+}
+
+{
+Dick
+Valoare energetica :1;
+Grasimi :1;
+Acizi Grasi :1;
+Glucide :1;
+    -din care zaharur :1;
+Fibre :1;
+Proteine :1;
+Sare :1;
+Cantitate: 100;
+}
+
+{
+Rosie
+Valoare energetica :1;
+Grasimi :1;
+Acizi Grasi :1;
+Glucide :1;
+    -din care zaharur :1;
+Fibre :1;
+Proteine :1;
+Sare :1;
+Cantitate: 100;
+}
+
+{
+Merisoare
+Valoare energetica :1;
+Grasimi :1;
+Acizi Grasi :1;
+Glucide :1;
+    -din care zaharur :1;
+Fibre :1;
+Proteine :1;
+Sare :1;
+Cantitate: 1;
+}
+
+{
+Pastrav
+Valoare energetica :1;
+Grasimi :1;
+Acizi Grasi :1;
+Glucide :1;
+    -din care zaharur :1;
+Fibre :1;
+Proteine :1;
+Sare :1;
+Cantitate: 1;
+}
+
+{
+Margarina
+Valoare energetica :1;
+Grasimi :1;
+Acizi Grasi :1;
+Glucide :1;
+    -din care zaharur :1;
+Fibre :1;
+Proteine :1;
+Sare :1;
+Cantitate: 100;
+}
+
+{
+Mustar Tecuci
+Valoare energetica :1;
+Grasimi :1;
+Acizi Grasi :1;
+Glucide :1;
+    -din care zaharur :1;
+Fibre :1;
+Proteine :1;
+Sare :1;
+Cantitate: 100;
+}
+
+{
+Perisoare
+Valoare energetica :1;
+Grasimi :1;
+Acizi Grasi :1;
+Glucide :1;
+    -din care zaharur :1;
+Fibre :1;
+Proteine :1;
+Sare :1;
+Cantitate: 1;
+}
+
+{
+Capsuna
+Valoare energetica :1;
+Grasimi :1;
+Acizi Grasi :1;
+Glucide :1;
+    -din care zaharur :1;
+Fibre :1;
+Proteine :1;
+Sare :1;
+Cantitate: 1;
+}
+
+{
+Supa
+Valoare energetica :10;
+Grasimi :10;
+Acizi Grasi :10;
+Glucide :10;
+    -din care zaharur :10;
+Fibre :10;
+Proteine :10;
+Sare :10;
+Cantitate: 100;
+}

@@ -1,0 +1,4 @@
+﻿  Produs.cpp
+C:\Compendium\ProiecteVS\ProiectPCLP\Produs.cpp(43,28): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Compendium\ProiecteVS\ProiectPCLP\Produs.cpp(63,28): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  ProiectPCLP.vcxproj -> C:\Compendium\ProiecteVS\ProiectPCLP\Debug\ProiectPCLP.exe

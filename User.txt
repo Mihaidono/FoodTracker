@@ -1,0 +1,11 @@
+{
+Andrei Mihai
+19
+Barbat
+1.72
+70
+23.6614
+Usoara(Activitate)
+Mentinere(Scop)
+Normal(Metabolism)
+}
