@@ -3,17 +3,9 @@ Mar
 Cantitate :100;
 Portie:2;
 
-Supa
-Cantitate :1000;
-Portie:2;
-
 12.12.2001
 Mar
 Cantitate :100;
-Portie:2;
-
-Supa
-Cantitate :1000;
 Portie:2;
 
 31.05.2021

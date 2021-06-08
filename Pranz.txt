@@ -5,10 +5,6 @@ Portie:1;
 
 21.10.2001
 Supa
-Cantitate :20000;
-Portie:2;
-
-Supa
-Cantitate :10000;
+Cantitate :1000;
 Portie:2;
 

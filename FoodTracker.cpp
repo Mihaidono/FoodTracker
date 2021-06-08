@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <Windows.h>
 #include <iomanip>
+#include <random>
 
 ostream& operator<<(ostream& o, User& u)
 {
@@ -51,6 +52,82 @@ ostream& operator<<(ostream& o, Aliment& alim)
 		<< alim.getSare() << ";\nCantitate: "
 		<< alim.getCantitate() << ";\n";
 	return o;
+}
+
+void FoodTracker::generateMenu(string data)
+{
+	if (user.maxCalorii() < alim.calculProgres(data))
+		cout << "prea mare\n";
+	int callimit = int(user.maxCalorii() - alim.calculProgres(data));
+	int sum = 0;
+	vector<string> valimente;	string line;
+	ifstream f("Alimente.txt");
+	while (!f.eof())
+	{
+		getline(f, line);
+		if (line == "{")
+		{
+			getline(f, line);
+			valimente.push_back(line);
+		}
+		line.clear();
+	}
+	f.close();
+	int count = 1;
+	cout << "Poti incerca cateva alimente precum:\n";
+	while (int(sum) <= callimit)
+	{
+		random_device rd;
+		default_random_engine eng(rd());
+		uniform_real_distribution<double> distr(0, valimente.size());
+		int rdm = int(distr(eng));
+		sum += int(alim.calcCalorii(valimente.at(rdm)));
+		cout << "\t-" << valimente.at(rdm) << endl;
+		count++;
+		if (count == 6)
+			break;
+	}
+	cout << endl << "Meniul are un cumul caloric de " << sum << " calorii\n";
+}
+
+bool iscorrectDate(string data)
+{
+	if (data.size() != 10)
+		return false;
+	if (data.at(2) != '.' && data.at(5) != '.')
+		return false;
+	string piece,sday,smonth,syear;
+	piece = data.substr(0, 2);
+	sday = piece;
+	int day = stoi(piece);
+	if (day < 1 || day > 31)
+		return false;
+	piece = data.substr(3, 2);
+	smonth = piece;
+	int month = stoi(piece);
+	if (month < 1 || month>12)
+		return false;
+	piece = data.substr(6, 4);
+	syear = piece;
+	if (piece.size() != 4)
+		return false;
+//-------------common check end-------------------------------------
+	if ((stoi(syear) % 100) % 4 == 0)
+	{
+		if (smonth == "02" && (day < 1 || day>29))
+			return false;
+	}
+	else if (smonth == "02" && (day < 1 || day>28))
+		return false;
+//----------verificare an bisect end--------------------------------
+	if ((month == 1 || month == 3 || month == 5 || month == 7
+		|| month == 8 || month == 10 || month == 12) && (day < 1 || day>31))
+		return false;
+	else if ((month == 4 || month == 6 || month == 9 || month == 11)
+		&& (day < 1 || day>30))
+		return false;
+//---------verificare luni/zile end---------------------------------
+	return true;
 }
 
 FoodTracker::FoodTracker()
@@ -249,15 +326,24 @@ Meniu3:
 		goto isto1;
 		break;
 	case 2:
-		cout << "Introduceti data sub format dd.mm.yyyy: ";
 		cin.ignore();
+	checkdate:
+		system("cls");
+		cout << "Introduceti data sub format dd.mm.yyyy: ";
 		getline(cin, datac);
+		if (iscorrectDate(datac) == false)
+		{
+			cout << "\nData introdusa este incorecta!\n";
+			Sleep(500);
+			goto checkdate;
+		}
 		alim.depositDate(datac);
 	minimen3:
 		system("cls");
 		cout << "-----Pentru data " << datac << " :\n"
 			<< "1.Vizualizare progres\n2.Vizualizare produse\n"
-			<< "3.Introduceti un produs consumat\n4.Intoarce-te la meniul anterior\n";
+			<< "3.Introduceti un produs consumat\n"
+			<< "4.Recomandarea noastra\n5.Intoarce-te la meniul anterior\n";
 		cin >> choice;
 		switch (choice)
 		{
@@ -303,7 +389,7 @@ Meniu3:
 				case 1:
 					system("cls");
 					cout << "Caloriile consumate pana acum sunt: " 
-						<< alim.addUp("MicDejun.txt",datac)<< endl;
+						<< int(alim.addUp("MicDejun.txt",datac))<< endl;
 				loopi11:
 					cout << "\nApasa (1) ca sa te intorci.";
 					cin >> choice;
@@ -315,7 +401,7 @@ Meniu3:
 				case 2:
 					system("cls");
 					cout << "Caloriile consumate pana acum sunt: "
-					<< alim.addUp("Pranz.txt", datac) << endl;
+					<< int(alim.addUp("Pranz.txt", datac)) << endl;
 				loopi12:
 					cout << "\nApasa (1) ca sa te intorci.";
 					cin >> choice;
@@ -327,7 +413,7 @@ Meniu3:
 				case 3:
 					system("cls");
 					cout << "Caloriile consumate pana acum sunt: "
-					<< alim.addUp("Cina.txt", datac) << endl;
+					<< int(alim.addUp("Cina.txt", datac)) << endl;
 				loopi13:
 					cout << "\nApasa (1) ca sa te intorci.";
 					cin >> choice;
@@ -339,7 +425,7 @@ Meniu3:
 				case 4:
 					system("cls");
 					cout << "Caloriile consumate pana acum sunt: "
-					<< alim.addUp("Gustari.txt", datac) << endl;
+					<< int(alim.addUp("Gustari.txt", datac)) << endl;
 				loopi14:
 					cout << "\nApasa (1) ca sa te intorci.";
 					cin >> choice;
@@ -350,7 +436,7 @@ Meniu3:
 					break;
 				case 5:
 					cout << "Caloriile consumate in total in data de: " << datac << " sunt: "
-						<< alim.calculProgres(datac) << endl;
+						<< int(alim.calculProgres(datac)) << endl;
 				loopi15:
 					cout << "\nApasa (1) ca sa te intorci.";
 					cin >> choice;
@@ -491,6 +577,17 @@ Meniu3:
 			}
 			break;
 		case 4:
+			system("cls");
+			generateMenu(datac);
+		loop45:
+			cout << "\nApasa (1) ca sa te intorci.";
+			cin >> choice;
+			if (choice == 1)
+				goto minimen3;
+			else cout << "Valoarea tastata este gresita\n";
+			goto loop45;
+			break;
+		case 5:
 			goto Meniu3;
 			break;
 		default:

@@ -10,4 +10,5 @@ private:
 	Produs alim;
 public:
 	FoodTracker();
+	void generateMenu(string);
 };

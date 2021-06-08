@@ -8,7 +8,6 @@ private:
 	double cantitate;
 	int portie;
 	void storeProdus(int, string);
-	double calcCalorii(string nume);
 	void sortfl();
 public:
 //------------functii principale------------
@@ -21,6 +20,7 @@ public:
 	void printDate(double);
 	bool ispopulatedIstoric();
 	bool checkDate(string);
+	double calcCalorii(string nume);
 
 //------------get si set pt date ------------
 	Aliment getAliment();

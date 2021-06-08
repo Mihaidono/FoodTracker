@@ -302,6 +302,8 @@ bool Produs::ispopulatedIstoric()
 		return false;
 	return true;
 }
+
+
 //------------ Get si set definite ------------
 
 Aliment Produs::getAliment() { return alim; }
